@@ -1,0 +1,79 @@
+<!-- templates/confirm_registration.html -->
+
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="StudyMate Company">
+    <meta name="generator" content="StudyMate Company 0.1.0">
+    <title>Завершите регистрацию</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/signin.css' %}" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="text-center">
+
+<main class="form-signin w-100 m-auto">
+    <form method="post">
+        {% csrf_token %}
+        <h1 class="h3 mb-3 fw-normal">Завершите регистрацию</h1>
+
+        {% if form.non_field_errors %}
+            <div class="alert alert-danger" role="alert">
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+
+        <!-- Имя -->
+        <div class="form-floating mb-3">
+            <input type="text" name="first_name" class="form-control" id="id_first_name" placeholder="Ваше имя" required>
+            <label for="id_first_name">Имя</label>
+            {% if form.first_name.errors %}
+                <div class="invalid-feedback d-block">{{ form.first_name.errors.as_text }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Пароль -->
+        <div class="form-floating mb-3">
+            <input type="password" name="password1" class="form-control" id="id_password1" placeholder="Пароль" required>
+            <label for="id_password1">Пароль</label>
+            {% if form.password1.errors %}
+                <div class="invalid-feedback d-block">{{ form.password1.errors.as_text }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Повтор пароля -->
+        <div class="form-floating mb-3">
+            <input type="password" name="password2" class="form-control" id="id_password2" placeholder="Подтвердите пароль" required>
+            <label for="id_password2">Подтвердите пароль</label>
+            {% if form.password2.errors %}
+                <div class="invalid-feedback d-block">{{ form.password2.errors.as_text }}</div>
+            {% endif %}
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Завершить регистрацию</button>
+    </form>
+</main>
+
+</body>
+</html>

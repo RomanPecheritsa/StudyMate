@@ -1,0 +1,24 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="StudyMate Company">
+    <meta name="generator" content="StudyMate Company 0.1.0">
+    <title>Ошибка</title>
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/signin.css' %}" rel="stylesheet">
+</head>
+<body class="text-center">
+
+<main class="form-signin w-100 m-auto">
+    <h1 class="h3 mb-3 fw-normal">Ошибка подтверждения</h1>
+    <p>{{ error }}</p>
+    <a href="/" class="btn btn-secondary">На главную</a>
+</main>
+
+</body>
+</html>
