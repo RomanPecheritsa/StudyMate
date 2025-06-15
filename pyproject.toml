@@ -12,6 +12,7 @@ python-dotenv = "^1.1.0"
 pre-commit = "^4.2.0"
 psycopg2 = "^2.9.10"
 django-autocomplete-light = "^3.12.1"
+djangorestframework = "^3.16.0"
 
 
 [build-system]
